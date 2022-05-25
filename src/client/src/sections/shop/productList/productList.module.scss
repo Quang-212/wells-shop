@@ -1,0 +1,26 @@
+@use "../../../scss/index" as *;
+
+.sortWrap {
+    height: 50px;
+    @include flex(flex-end, flex-end);
+    span {
+        height: 30px;
+        line-height: 30px;
+        font-size: 1.7rem;
+        margin-right: 10px;
+    }
+    select {
+        font-size: 1.4rem;
+        height: 30px;
+        outline-color: $primary-color;
+        option {
+            font-size: 1.4rem;
+        }
+    }
+}
+.grid {
+    margin-top: 20px;
+    .pagination {
+        margin: 0 auto;
+    }
+}

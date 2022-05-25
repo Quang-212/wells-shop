@@ -1,0 +1,60 @@
+@use "../../scss/index" as *;
+
+.commentList {
+    margin: 26px 0 0 90px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 70%;
+        background-color: red;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-60%);
+    }
+    .commentItem {
+        width: max-content;
+        margin-top: 8px;
+    }
+    .content {
+        padding: 6px 14px;
+        border-radius: 10px;
+        background-color: rgba(201, 201, 201, 0.4);
+        margin-left: 10px;
+        .name {
+            display: flex;
+            align-items: center;
+            h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+            .arrow {
+                font-size: 1.8rem;
+            }
+        }
+        .text {
+            font-size: 1.5rem;
+        }
+    }
+    .like {
+        position: relative;
+        top: 0;
+        font-size: 1.4rem;
+        margin-left: 26px;
+        color: rgb(80, 44, 44);
+        cursor: pointer;
+        transition: all 0.1s ease-in;
+        &:hover {
+            text-decoration: underline;
+            top: -1px;
+        }
+    }
+    .reply {
+        @extend .like;
+        margin-left: 18px;
+    }
+    .input {
+        padding-left: 30px;
+    }
+}

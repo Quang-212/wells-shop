@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image {
+        margin-top: 50px;
+        width: 46vw;
+        aspect-ratio: 767/432;
+        background: {
+            image: url("../../assets/img/notFound/404-page.jpg");
+            size: cover;
+            repeat: no-repeat;
+            position: center;
+        }
+    }
+    .btn{
+        margin: 30px;
+    }
+}

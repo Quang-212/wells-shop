@@ -1,0 +1,89 @@
+@use "../../../scss/index" as *;
+
+.modal {
+    position: fixed;
+    z-index: 6;
+    inset: 0;
+    background-color: $primary-color;
+    .wrapper {
+        width: 380px;
+        height: 460px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        box-shadow: 0 0 20px 5px $gray-color;
+        backdrop-filter: blur(10px);
+        @include flex(space-evenly, center, column);
+        .title {
+            font-size: 1.6rem;
+        }
+        .user {
+            margin-top: -20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .profilePic {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: {
+                    position: center;
+                    repeat: no-repeat;
+
+                    size: cover;
+                }
+            }
+            p{
+                font-size: 1.6rem;
+                color: $black-color;
+            }
+        }
+        .des {
+            width: 90%;
+            p {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+        .recoverInfo {
+            height: 3rem;
+            margin-top: -18px;
+            p {
+                color: rgb(71, 8, 8);
+                font-size: 1.4rem;
+            }
+        }
+        .continue {
+            margin-top: -20px;
+            width: 200px;
+            span {
+                font-size: 2rem;
+            }
+        }
+        .existAcc {
+            span,
+            a {
+                font-size: 1.6rem;
+                color: $black-color;
+            }
+            a {
+                text-decoration: underline;
+                margin-left: 6px;
+                color: #751f97;
+            }
+        }
+    }
+}
+.close {
+    position: fixed;
+    z-index: 6;
+    cursor: pointer;
+    right: 40px;
+    top: 40px;
+    .icon {
+        color: $black-color;
+        font-size: 3rem;
+    }
+}

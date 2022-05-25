@@ -1,0 +1,277 @@
+@use '../../scss/index' as *;
+
+.section1 {
+    background-color: $primary-color;
+    height: 550px;
+    margin-top: $nav-height;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    .content {
+        margin: 0 20% 20px;
+        width: 270px;
+        .slogan {
+            padding-bottom: 30px;
+        }
+        h4 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin: 0;
+            text-align: center;
+        }
+        .description {
+            text-align: center;
+        }
+        h1 {
+            font-size: 6rem;
+            font-weight: 500;
+            margin: 0;
+            line-height: 7.5rem;
+        }
+    }
+}
+.section2 {
+    background-color: $white-color;
+    height: 360px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    .content {
+        margin: 0 20%;
+        width: 800px;
+        p {
+            font-size: 1.7rem;
+            color: $black-color;
+            line-height: 2.6rem;
+            margin: 40px 0;
+        }
+    }
+}
+.section3 {
+    width: 100%;
+    height: calc(100vw / 2.2);
+    .cheerImage {
+        width: 100%;
+        height: 100%;
+        background: {
+            image: url("../../assets/img/about/cheer.png");
+            size: contain;
+            repeat: no-repeat;
+            position: center;
+        }
+    }
+}
+.section4 {
+    @extend .section2;
+    height: 420px;
+    .content {
+        width: 700px;
+        h2 {
+            font-size: 4rem;
+            font-weight: 400;
+            max-width: 620px;
+            line-height: 5rem;
+        }
+        p {
+            line-height: 2.5rem;
+        }
+    }
+}
+.section5 {
+    width: 100%;
+    min-height: 270px;
+    background-color: $primary-color;
+    .content{
+        justify-content: center;
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 270px;
+        h2 {
+            font-size: 5rem;
+            color: $black-color;
+            font-weight: 400;
+            margin: 20px 0;
+        }
+        span {
+            font-size: 1.4rem;
+            color: $black-color;
+            font-weight: 400;
+        }
+    }
+}
+.section6 {
+    width: 100%;
+    height: calc(100vw / 2.245);
+    .cafeImage {
+        width: 100%;
+        height: 100%;
+        background-image: url("../../assets/img/about/coffee.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+.section7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    width: 100%;
+    background-color: $primary-color;
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            font-size: 5rem;
+            color: $black-color;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+        }
+        p {
+            font-size: 1.5rem;
+            color: $black-color;
+            font-weight: 400;
+            text-align: center;
+            width: 280px;
+            margin: 0 0 50px 0;
+        }
+        .goToShop {
+            .shopLink {
+                display: flex;
+                width: 150px;
+                height: 50px;
+                border-radius: 30px;
+                background-color: $black-color;
+                text-decoration: none;
+                span {
+                    color: $white-color;
+                    font-size: 1.8rem;
+                    margin: auto;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+/* Css transform */
+
+/* TabletPro */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .section1 {
+        height: 600px;
+    }
+    .section3{
+        height: calc(100vw / 2.2);
+    }
+    .section7{
+        height: 550px;
+    }
+}
+/* Mobile and Tablet */
+@media (max-width: 1023px) {
+    /* Chung cho cả 2 như sidebar or navbar */
+    .section1 {
+        height: 170px;
+        margin-top: calc($nav-height - 20px);
+        .content {
+            margin: 0 2%;
+            width: 100%;
+            .slogan {
+                padding-bottom: 20px;
+            }
+            h4 {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin: 0;
+                text-align: left;
+            }
+            .description {
+                text-align: left;
+            }
+            h1 {
+                font-size: 4rem;
+                font-weight: 400;
+                margin: 0;
+                line-height: 5rem;
+            }
+        }
+    }
+    .section2 {
+        height: 240px;
+        .content {
+            width: 100%;
+            margin: 0 3%;
+            p {
+                margin: 20px 0;
+            }
+        }
+    }
+    .section7{
+        height: 450px;
+    }
+}
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .section4{
+        height: 300px;
+    }
+    .section5{
+        min-height: 200px;
+        .item{
+            min-height: 200px;
+        }
+    }
+}
+/* Mobile and SmallTablet */
+@media (max-width: 767px) {
+    .section1 {
+        height: 220px;
+        .content {
+            margin: 0 3%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h4 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .description {
+                text-align: center;
+            }
+            h1 {
+                font-size: 3.8rem;
+                line-height: 4.4rem;
+            }
+        }
+    }
+    .section2 {
+        height: 330px;
+    }
+    .section4{
+        height: 450px;
+    }
+    .section5{
+        min-height: 180px;
+        .item{
+            min-height: 180px;
+        }
+    }
+    .section7{
+        .content{
+        margin: 0 3%;
+        h2{
+            text-align: center;
+        }
+        }
+    }
+    
+}

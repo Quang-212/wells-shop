@@ -1,0 +1,37 @@
+@use '../../scss/index' as *;
+.wrapper {
+    height: 30px;
+    @include flex(center, center, row);
+    .goByStep {
+        height: 100%;
+        width: 40px;
+        margin: 0 15px;
+        border: none;
+        border-radius: 3px;
+        background-color: transparent;
+        cursor: pointer;
+        .icon {
+            font-size: 2.6rem;
+            color: $footer-color;
+        }
+        &:hover {
+            background-color: #efefef;
+        }
+    }
+    .goByNumber {
+        @extend .goByStep;
+        font-size: 1.8rem;
+    }
+    .currentPage {
+        background-color: $primary-color;
+    }
+}
+@media (max-width: 767px) {
+    .wrapper {
+        height: 26px;
+        .goByStep {
+            width: 32px;
+            margin: 0 4px;
+        }
+    }
+}

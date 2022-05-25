@@ -1,0 +1,125 @@
+@use '../../../scss/index' as *;
+
+.empty{
+    margin: 60px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span{
+        color: $black-color;
+        font-size: 1.6rem;
+    }
+    a{
+        width: 160px;
+        height: 40px;
+        margin-top: 10px;
+        border-radius: 3px;
+        border: 1px solid lightgrey;
+        display: flex;
+        text-decoration: none;
+        span{
+            color: $black-color;
+            font-size: 1.8rem;
+            margin: auto;
+        }
+    }
+}
+.noneOfProduct{
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 100px;
+}
+.grid {
+    margin-top: 60px;
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        overflow: hidden;
+        .link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            text-decoration: none;
+            .image {
+                background: {
+                    position: center;
+                    repeat: no-repeat;
+                    size: 100%;
+                }
+                aspect-ratio: 1;
+                width: 100%;
+                transition: 0.2s;
+                overflow: hidden;
+            }
+            .title {
+                color: $black-color;
+                font-size: 1.7rem;
+                margin: 10px;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; 
+                        line-clamp: 1; 
+                -webkit-box-orient: vertical;
+            }
+            .price {
+                color: $black-color;
+                font-size: 2.6rem;
+                font-weight: 600;
+                margin-left: 10px;
+            }
+            &:hover .image {
+                transform: scale(1.08);
+                transform-origin: 50% 100%;
+            }
+            &:hover .title {
+                color: rgb(29, 52, 179);
+            }
+        }
+        .fav{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width: 140px;
+                background-color: transparent;
+                margin: 12px 0px 40px 4px;
+                border-radius: 4px;
+                cursor: pointer;
+                border: 1px solid rgb(167, 167, 167);
+                .icon {
+                    font-size: 2.4rem;
+                    color: red;
+                }
+                span {
+                    font-weight: 500;
+                    color: $black-color;
+                    font-size: 1.6rem;
+                    margin-left: 10px;
+                }
+                &:hover {
+                    background-color: rgb(243, 243, 243);
+                }
+        }
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .grid {
+        .product {
+            margin: 0 10px 10px;
+            .link {
+                .title {
+                    margin: 10px 10px 6px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use "../../scss/index" as *;
+
+.form {
+    height: 50px;
+    overflow: hidden;
+    input {
+        outline: none;
+        border-radius: 10px;
+        border: 1px solid #000;
+        height: 100%;
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 10px;
+        overflow: auto;
+    }
+}

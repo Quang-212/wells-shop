@@ -1,0 +1,241 @@
+@use "../../../scss/index" as *;
+
+.wrapper {
+    margin: 50px 10px 0;
+    background-color: #fff;
+    width: 100vw;
+    display: flex;
+    .leftBar {
+        @include flex(flex-start, center, column);
+        width: 20%;
+        .avatar {
+            position: relative;
+            height: 110px;
+            aspect-ratio: 1;
+            background: {
+                repeat: no-repeat;
+                position: center;
+                size: contain;
+            }
+            .camIcon {
+                font-size: 2.8rem;
+                color: $white-color;
+                position: absolute;
+                right: 4px;
+                bottom: 14px;
+                background-color: #ff8100;
+                border-radius: 50%;
+                border: 2px solid #fff;
+                cursor: pointer;
+            }
+            .imageSelect {
+                position: absolute;
+            }
+        }
+        .name {
+            font-size: 1.8rem;
+        }
+        .role {
+            font-size: 1.5rem;
+        }
+        .feature {
+            margin-top: 50px;
+            width: 100%;
+            .leftItem {
+                @include flex(flex-start, center, row);
+                height: 60px;
+                position: relative;
+                .leftIcon {
+                    font-size: 2.6rem;
+                    margin-left: 50px;
+                }
+                span {
+                    cursor: pointer;
+                    color: black;
+                    font-size: 1.8rem;
+                    margin-left: 20px;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    width: 5px;
+                    height: unset;
+                    background-color: purple;
+                    border-radius: 2.5px;
+                }
+                &:last-child {
+                    margin-top: 100px;
+                }
+                &.active::before {
+                    height: 70%;
+                }
+                &.active {
+                    .leftIcon,
+                    span {
+                        color: purple;
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        width: 60%;
+        background-color: rgb(240, 240, 240);
+        .mainHeader {
+            margin: 0 50px;
+            @include flex(space-between);
+            h1 {
+                text-align: center;
+                font-size: 2.6rem;
+                margin: 10px 0;
+            }
+            .addProduct {
+                display: flex;
+                height: 40px;
+                width: 140px;
+                color: $white-color;
+                background-color: rgb(18, 216, 34);
+                border-radius: 20px;
+                cursor: pointer;
+                animation: shake 0.6s infinite ease-in-out;
+                span {
+                    margin: auto;
+                    font-size: 1.8rem;
+                }
+                @keyframes shake {
+                    0%, 100% {
+                        transform: rotate(0deg);
+                    }
+                    50% {
+                        transform: rotate(2deg);
+                    }
+                }
+            }
+        }
+        .table {
+            width: 100%;
+            border: 1px solid black;
+            tr {
+                td {
+                    border-bottom: 1px solid black;
+                    max-width: calc(92% / 6);
+                    height: 40px;
+                    font-size: 1.6rem;
+                    p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; /* number of lines to show */
+                        line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                    .actionIcon {
+                        font-size: 1.8rem;
+                        // margin: 0 4px;
+                    }
+                    .image {
+                        width: 50px;
+                        height: 50px;
+                        background: {
+                            repeat: no-repeat;
+                            size: contain;
+                            position: center;
+                        }
+                    }
+                    &:nth-child(1) {
+                        width: 3%;
+                    }
+                    &:nth-child(2) {
+                        width: 5%;
+                    }
+                }
+            }
+        }
+    }
+    .rightBar {
+        width: 20%;
+        .section1 {
+            margin: 20px 40px 0;
+            h2 {
+                font-size: 1.8rem;
+            }
+            .content {
+                width: 100%;
+                margin-top: 10px;
+                .rightItem {
+                    @include flex(flex-start, center);
+                    height: 60px;
+                    .rightIcon {
+                        @include flex();
+                        background-color: rgb(236, 236, 236);
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 50%;
+                        .icon {
+                            font-size: 2.4rem;
+                        }
+                    }
+                    .des {
+                        margin-left: 40px;
+                        span {
+                            display: block;
+                            font-size: 1.55rem;
+                            color: gray;
+                            &:first-child {
+                                color: black;
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .section2 {
+            margin: 40px 40px 0;
+            h2 {
+                font-size: 1.8rem;
+            }
+            .chanel {
+                .chanelItem {
+                    &:first-child {
+                        margin-top: 20px;
+                    }
+                    margin-top: 4px;
+                    height: 40px;
+                    @include flex(space-evenly, space-between, column);
+                    .des {
+                        width: 80%;
+                        @include flex(space-between, center, row);
+                        span {
+                            font-size: 1.4rem;
+                            font-weight: 400;
+                            &:nth-child(2) {
+                                color: green;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    .progess {
+                        background-color: rgb(236, 236, 236);
+                        width: 80%;
+                        height: 8px;
+                        border-radius: 4px;
+                        overflow: hidden;
+                        position: relative;
+                        .percentage {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: 70%;
+                            background-color: rgb(255, 153, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

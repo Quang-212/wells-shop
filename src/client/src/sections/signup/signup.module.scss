@@ -1,0 +1,80 @@
+@use "../../scss/index" as *;
+
+.modal {
+    position: fixed;
+    z-index: 6;
+    inset: 0;
+    background-color: $primary-color;
+    .wrapper {
+        width: 380px;
+        height: 600px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        box-shadow: 0 0 20px 5px $gray-color;
+        backdrop-filter: blur(10px);
+        @include flex(space-evenly, center, column);
+        .title {
+            font-size: 2rem;
+        }
+        .formField {
+            height: 50px;
+            width: 300px;
+            input {
+                width: 100%;
+                padding: 16px;
+                background-color: $white-color;
+                border-radius: 3px;
+                border: 1px solid $gray-color;
+                outline-color: #5b2b6e;
+            }
+            .err {
+                display: block;
+                color: red;
+                font-size: 1.4rem;
+                margin: 4px;
+                height: 20px;
+            }
+        }
+        .registerInfo{
+            height: 3rem;
+            margin-top: -18px;
+            p{
+                color: rgb(71, 8, 8);
+                font-size: 1.4rem;
+            }
+        }
+        .signup {
+            margin-top: -20px;
+            width: 200px;
+            span {
+                font-size: 2rem;
+            }
+        }
+        .createAcc {
+            span,
+            a {
+                font-size: 1.6rem;
+                color: $black-color;
+            }
+            a {
+                text-decoration: underline;
+                margin-left: 6px;
+                color: #751f97;
+            }
+        }
+    }
+}
+.close{
+    position: fixed;
+    cursor: pointer;
+    z-index: 6;
+    right: 40px;
+    top: 40px;
+    .icon{
+        color: $black-color;
+        font-size: 3rem;
+    }
+}

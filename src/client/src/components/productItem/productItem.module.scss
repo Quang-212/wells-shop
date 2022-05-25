@@ -1,0 +1,94 @@
+@use "../../scss/index" as *;
+.col {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+    .link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-decoration: none;
+        .limitImageSize {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            .image {
+                background: {
+                    position: center;
+                    repeat: no-repeat;
+                    size: cover;
+                }
+                width: 100%;
+                aspect-ratio: 1;
+                transition: 0.2s;
+            }
+        }
+
+        .title {
+            color: $black-color;
+            font-size: 1.7rem;
+            margin: 10px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .price {
+            color: $black-color;
+            font-size: 2.6rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        &:hover .image {
+            transform: scale(1.08);
+            transform-origin: 50% 50%;
+        }
+        &:hover .title {
+            color: rgb(29, 52, 179);
+        }
+    }
+}
+.buy {
+    text-align: center;
+    text-decoration: none;
+    height: 40px;
+    width: 190px;
+    display: flex;
+    border-radius: 3px;
+    border: 1px solid rgb(167, 161, 161);
+    margin: 10px 0 0 10px;
+    transition: 0.2s;
+    span {
+        margin: auto;
+        font-size: 1.6rem;
+        color: $black-color;
+    }
+    &:hover {
+        background-color: rgb(241, 241, 241);
+    }
+}
+.pagination {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+    .product {
+        .link {
+            .title {
+                margin: 10px 10px 6px;
+            }
+        }
+    }
+}

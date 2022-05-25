@@ -1,0 +1,9 @@
+@use "sass:list";
+
+@mixin flex($justity-content: center, $align-items: center, $derection: row) {
+    display: flex;
+    justify-content: $justity-content;
+    align-items: $align-items;
+    flex-direction: $derection;
+}
+

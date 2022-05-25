@@ -1,0 +1,17 @@
+@use "../../../scss/index" as *;
+.wrapper {
+    margin-top: 20px;
+    .comment {
+        width: 100%;
+        h2 {
+            font-size: 3rem;
+        }
+        .noComment {
+            margin-top: 60px;
+            width: 100%;
+            text-align: center;
+            font-size: 2.4rem;
+            text-shadow: 0 2px 25px rgb(109, 88, 88);
+        }
+    }
+}

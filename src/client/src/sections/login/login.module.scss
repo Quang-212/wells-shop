@@ -1,0 +1,109 @@
+@use "../../scss/index" as *;
+
+.modal {
+    position: fixed;
+    z-index: 6;
+    inset: 0;
+    background-color: $primary-color;
+    .wrapper {
+        width: 380px;
+        height: 560px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        box-shadow: 0 0 20px 5px $gray-color;
+        backdrop-filter: blur(10px);
+        @include flex(space-evenly, center, column);
+        .title {
+            font-size: 2rem;
+        }
+        .formField {
+            height: 50px;
+            width: 300px;
+            input {
+                width: 100%;
+                padding: 16px;
+                background-color: $white-color;
+                border-radius: 3px;
+                outline-color: #12212e;
+                border: 1px solid $gray-color;
+            }
+            .err {
+                display: block;
+                color: red;
+                font-size: 1.4rem;
+                margin: 4px;
+                height: 20px;
+            }
+        }
+        .forgotPass {
+            display: flex;
+            align-self: end;
+            margin: -4px 20px 0 0;
+            a {
+                span {
+                    color: $black-color;
+                    font-size: 1.6rem;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .loginInfo {
+            height: 1.6rem;
+            margin: -14px 0 -10px 0;
+            p {
+                color: rgb(71, 8, 8);
+                font-size: 1.4rem;
+            }
+        }
+        .login {
+            width: 300px;
+            span {
+                font-size: 2rem;
+            }
+        }
+        .ortherLogin {
+            font-size: 1.6rem;
+        }
+        .ortherAuth {
+            @include flex(center, center);
+            .social {
+                margin: 5px;
+                width: 130px;
+                height: 40px;
+                border: none;
+                &gg {
+                    background-color: red;
+                }
+                &fb {
+                    background-color: #2b76b8;
+                }
+            }
+        }
+        .createAcc {
+            span,
+            a {
+                font-size: 1.6rem;
+                color: $black-color;
+            }
+            a {
+                text-decoration: underline;
+                margin-left: 6px;
+                color: #751f97;
+            }
+        }
+    }
+}
+.close{
+    position: fixed;
+    cursor: pointer;
+    z-index: 6;
+    right: 40px;
+    top: 40px;
+    .icon{
+        color: $black-color;
+        font-size: 3rem;
+    }
+}

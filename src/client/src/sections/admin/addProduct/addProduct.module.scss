@@ -1,0 +1,154 @@
+@use "../../../scss/index" as *;
+
+.wrapper {
+    position: fixed;
+    z-index: 6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .content {
+        background-color: #9dbe99;
+        width: 700px;
+        height: 600px;
+        margin: 0 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 5px black;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .close {
+            position: absolute;
+            font-size: 3rem;
+            color: $black-color;
+            background-color: rgb(159, 150, 160);
+            border-radius: 50%;
+            right: 34px;
+            top: 6px;
+            cursor: pointer;
+        }
+        .field {
+            margin: 20px 10px 0;
+            label {
+                color: $black-color;
+                font-size: 2rem;
+                display: block;
+                margin: 5px 5px 2px;
+            }
+            span {
+                @extend label;
+                text-align: center;
+            }
+            input {
+                height: 50px;
+                padding: 10px;
+                width: 100%;
+                outline-color: $primary-color;
+                font-size: 1.8rem;
+                &::-webkit-input-placeholder {
+                    font-size: 1.4rem;
+                }
+            }
+
+            textarea {
+                @extend input;
+                height: 100px;
+                padding: 10px;
+            }
+            .err {
+                color: red;
+                font-size: 1.5rem;
+                margin: 5px;
+            }
+            .btn {
+                cursor: pointer;
+                width: 160px;
+                height: 50px;
+                border-radius: 30px;
+                border: none;
+                margin-bottom: 20px;
+                background-color: $black-color;
+                span {
+                    color: $white-color;
+                    font-size: 1.8rem;
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+        .image {
+            margin: 10px 10px 0;
+            width: 100%;
+            height: 200px;
+            @include flex(space-between, flex-start, row);
+            label {
+                @include flex(flex-start);
+                cursor: pointer;
+                width: 200px;
+                height: 50px;
+                border: 1px solid black;
+                border-radius: 10px;
+                color: $black-color;
+                span {
+                    font-size: 2rem;
+                    margin: 0 20px 0 10px;
+                }
+                .uploadIcon {
+                    font-size: 3rem;
+                }
+            }
+            input {
+                font-size: 1.8rem;
+            }
+            .imagePreview {
+                margin-right: 20px;
+                width: 200px;
+                height: 100%;
+                border-radius: 5px;
+                background: {
+                    size: contain;
+                    repeat: no-repeat;
+                    position: center;
+                }
+            }
+        }
+        .size {
+            margin: 0 10px;
+            span {
+                color: $black-color;
+                font-size: 2rem;
+                display: block;
+                margin: 5px 5px 20px;
+            }
+            .typeSize {
+                margin: 10px 20px;
+                @include flex(flex-start);
+                input {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 14px;
+                }
+                label {
+                    color: $black-color;
+                    font-size: 1.4rem;
+                }
+            }
+            .sizeCheck {
+                p {
+                    display: inline-block;
+                    color: $black-color;
+                    font-size: 1.8rem;
+                    width: 20px;
+                    height: 20px;
+                    margin: 6px 0;
+                }
+                @include flex();
+                .sizeItem {
+                    height: 24px;
+                    width: 24px;
+                    margin-left: 20px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

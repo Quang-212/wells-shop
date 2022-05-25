@@ -1,0 +1,183 @@
+@use "sass:list";
+@use "sass:math";
+@use "./variables" as v;
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+.container-fluid {
+    width: 100%;
+}
+/* GridSystem Handle */
+@each $min, $max, $content in v.$media {
+    @if ($min==0) {
+        @media (max-width: $max) {
+            .container {
+                max-width: $content;
+            }
+        }
+    } @else {
+        @media (min-width: $min) and (max-width: $max) {
+            .container {
+                max-width: $content;
+            }
+        }
+    }
+}
+
+@mixin columns-width($size) {
+    @for $i from 0 through 12 {
+        @if ($i==0) {
+            .#{$size}-0 {
+                display: none;
+            }
+        } @else {
+            .#{$size}-#{$i} {
+                flex-basis: calc(25% / 3 * $i);
+                max-width: calc(25% / 3 * $i);
+            }
+        }
+    }
+    @for $i from 1 to 12 {
+        .#{$size}-o-#{$i} {
+            margin-left: calc(25% / 3 * $i);
+        }
+    }
+    .#{$size}-24 {
+        flex-basis: calc(25% / 3 * 12 / 5);
+        max-width: calc(25% / 3 * 12 / 5);
+    }
+    .#{$size}-72 {
+        flex-basis: calc(25% / 3 * 36 / 5);
+        max-width: calc(25% / 3 * 36 / 5);
+    }
+}
+
+@mixin row-col($gutter-size) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: {
+            left: math.div(-$gutter-size, 2);
+            right: math.div(-$gutter-size, 2);
+        }
+        .col {
+            padding: {
+                left: math.div($gutter-size, 2);
+                right: math.div($gutter-size, 2);
+            }
+        }
+        &.smGutters {
+            margin: {
+                left: math.div(-$gutter-size, 4);
+                right: math.div(-$gutter-size, 4);
+            }
+            .col {
+                padding: {
+                    left: math.div($gutter-size, 4);
+                    right: math.div($gutter-size, 4);
+                }
+            }
+        }
+        &.noGutters {
+            margin: {
+                left: 0;
+                right: 0;
+            }
+            .col {
+                padding: {
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+@mixin create-col($col-name, $col-width) {
+    @if ($col-width==0) {
+        .col-0 {
+            display: none;
+        }
+    } @else {
+        .col-#{$col-name} {
+            flex-basis: calc(25% / 3 * $col-width);
+            max-width: calc(25% / 3 * $col-width);
+        }
+    }
+}
+@mixin col($col-name, $col-num...) {
+    @include row-col(8px);
+    @include create-col($col-name, 12 / list.nth($col-num, 5));
+    @media (min-width: 576px) {
+        @include row-col(8px);
+        @include create-col($col-name, 12 / list.nth($col-num, 4));
+    }
+    @media (min-width: 768px) {
+        @include row-col(12px);
+        @include create-col($col-name, 12 / list.nth($col-num, 3));
+    }
+    @media (min-width: 1024px) {
+        @include row-col(16px);
+        @include create-col($col-name, 12 / list.nth($col-num, 2));
+    }
+    @media (min-width: 1280px) {
+        @include row-col(16px);
+        @include create-col($col-name, 12 / list.nth($col-num, 1));
+    }
+}
+
+@include row-col(8px);
+@include columns-width(xs);
+/* Mobile and SmallTablet( < 768px)*/
+@media (min-width: 576px) {
+    @include row-col(8px);
+    @include columns-width(sm);
+}
+/* Normal Tablet 768-1024px*/
+@media (min-width: 768px) {
+    @include row-col(12px);
+    @include columns-width(md);
+}
+/* Tablet Pro and Laptop( 1024-1280px )*/
+@media (min-width: 1024px) {
+    @include row-col(16px);
+    @include columns-width(lg);
+}
+/* PC and LargeScreen */
+@media (min-width: 1280px) {
+    @include row-col(20px);
+    @include columns-width(xl);
+}
+
+/* Css transform */
+@mixin tablet-pro-desktop {
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        @content;
+    }
+}
+@mixin mobile-md-tablet {
+    @media (max-width: 1023px) {
+        @content;
+    }
+}
+@mixin md-tablet {
+    @media (min-width: 768px) and (max-width: 1023px) {
+        @content;
+    }
+}
+@mixin mobile-sm-tablet {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+@mixin sm-tablet {
+    @media (min-width: 576px) and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: 575px) {
+        @content;
+    }
+}

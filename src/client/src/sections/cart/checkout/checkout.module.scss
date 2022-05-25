@@ -1,0 +1,255 @@
+@use "/src/scss/index" as *;
+.empty {
+    margin: 60px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+        color: $black-color;
+        font-size: 1.6rem;
+    }
+    a {
+        width: 160px;
+        height: 40px;
+        margin-top: 10px;
+        border-radius: 3px;
+        border: 1px solid lightgrey;
+        display: flex;
+        text-decoration: none;
+        span {
+            color: $black-color;
+            font-size: 1.8rem;
+            margin: auto;
+        }
+    }
+}
+.wrapper {
+    margin-top: 30px;
+    .itemList {
+        border-bottom: 1px solid lightgrey;
+        .title {
+            h1 {
+                color: $black-color;
+                font-size: 3rem;
+                margin: 0;
+            }
+            margin-bottom: 30px;
+        }
+        .item {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 80px;
+            margin: 16px 0;
+            .itemSelect {
+                margin-right: 8px;
+                input {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            .image {
+                height: 100%;
+                aspect-ratio: 1;
+                background: {
+                    position: center;
+                    repeat: no-repeat;
+                    size: contain;
+                }
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                justify-content: space-evenly;
+                margin-left: 20px;
+                .topLine {
+                    display: flex;
+                    justify-content: space-between;
+                    .name {
+                        font-size: 1.8rem;
+                        color: $black-color;
+                    }
+                    .delete {
+                        cursor: pointer;
+                        padding: 0 2px 8px;
+                        .icon {
+                            font-size: 1.7rem;
+                            color: #c5c5c5;
+                            transition: color 0.1s ease-in-out;
+                            &:hover {
+                                color: #3d5d90;
+                            }
+                        }
+                    }
+                }
+                .size {
+                    font-size: 1.4rem;
+                    color: #747474;
+                }
+                .botLine {
+                    display: flex;
+                    justify-content: space-between;
+                    .quantity {
+                        font-size: 1.6rem;
+                        color: #256ad6;
+                        select {
+                            cursor: pointer;
+                            border: none;
+                            color: #256ad6;
+                            outline: none;
+                            overflow-y: scroll;
+                            option {
+                                color: $black-color;
+                            }
+                        }
+                    }
+                    .price {
+                        font-size: 2rem;
+                        color: rgb(56, 56, 56);
+                    }
+                }
+            }
+        }
+    }
+    .selectedQuantity {
+        span {
+            font-size: 1.4rem;
+            margin-top: 6px;
+            color:  $black-color;
+            display: inline-block;
+        }
+    }
+    .totalBill {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        span {
+            font-size: 2.4rem;
+        }
+    }
+    .linkToShop {
+        display: flex;
+        margin-top: 26px;
+        p {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+        a {
+            margin-left: 6px;
+            text-decoration: none;
+            font-size: 1.6rem;
+            color: #256ad6;
+            &:hover {
+                color: #19468f;
+            }
+        }
+    }
+    .checkout {
+        margin-left: 50px;
+        .checkoutTitle {
+            font-size: 1.8rem;
+            color: $black-color;
+            // @include tablet-pro-desktop{
+            //     color: red;
+            // }
+        }
+        .paymentMethod {
+            margin-top: 30px;
+            height: 60px;
+            width: 100%;
+            border-radius: 4px;
+            border: 2.6px solid #1a7ac4;
+            display: flex;
+            align-items: center;
+            input {
+                margin-left: 10px;
+                width: 20px;
+                height: 20px;
+            }
+            label {
+                font-size: 1.7rem;
+                color: $black-color;
+                font-weight: 500;
+                margin-left: 16px;
+            }
+        }
+        .content {
+            h2 {
+                margin-top: 16px;
+                font-size: 1.8rem;
+                color: $black-color;
+            }
+            p {
+                margin-top: 6px;
+                font-size: 1.5rem;
+                color: $black-color;
+            }
+            .info {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                .name {
+                    width: 60%;
+                    label {
+                        font-size: 1.6rem;
+                        color: $black-color;
+                        font-weight: 500;
+                        display: block;
+                        margin-left: 4px;
+                    }
+                    input {
+                        width: 100%;
+                        height: 40px;
+                        padding-left: 10px;
+                        outline-color: #1a7ac4;
+                        font-size: 1.6rem;
+                        border-radius: 3px;
+                    }
+                }
+                .phone {
+                    @extend .name;
+                    width: 35%;
+                }
+            }
+            .address {
+                label {
+                    font-size: 1.6rem;
+                    color: $black-color;
+                    font-weight: 500;
+                    display: block;
+                    margin: 20px 0 26px 4px;
+                }
+                input, select {
+                    width: 100%;
+                    height: 50px;
+                    padding-left: 10px;
+                    outline-color: #1a7ac4;
+                    border-radius: 3px;
+                    border-width: 1px;
+                    font-size: 1.6rem;
+                    margin-bottom: 14px;
+                }
+                .inline {
+                    margin: 19px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .group:nth-child(1) {
+                        width: 60%;
+                    }
+                    .group:nth-child(2) {
+                        width: 35%;
+                    }
+                }
+            }
+            .submit {
+                margin-top: 10px;
+                width: 300px;
+                font-size: 2rem;
+            }
+        }
+    }
+}

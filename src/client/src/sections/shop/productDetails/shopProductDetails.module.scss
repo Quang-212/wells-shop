@@ -1,0 +1,216 @@
+@use "../../../scss/index" as *;
+
+.wrapper {
+    margin-top: 40px;
+    .image {
+        aspect-ratio: 1;
+        width: 100%;
+        background: {
+            size: contain;
+            position: center;
+            origin: 50% 50%;
+            repeat: no-repeat;
+        }
+    }
+    .infor {
+        height: 100%;
+        padding-left: 20px;
+        .name {
+            padding: 50px 0 10px;
+            h1 {
+                font-size: 3rem;
+                margin: 0;
+            }
+        }
+        .goToShop {
+            padding-bottom: 20px;
+            a {
+                text-decoration: none;
+                font-size: 1.6rem;
+                color: rgb(112, 110, 110);
+            }
+        }
+        .price {
+            padding-bottom: 24px;
+            span {
+                font-size: 3rem;
+                color: $black-color;
+            }
+        }
+        .size {
+            display: flex;
+            flex-direction: column;
+            p {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: $black-color;
+                margin: 0 0 10px;
+            }
+            .sizeItem {
+                margin-bottom: 10px;
+                span {
+                    color: $black-color;
+                    font-size: 1.8rem;
+                }
+                input {
+                    margin-right: 5px;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+        .handleBag {
+            margin: 20px 0 40px;
+            span {
+                font-size: 1.6rem;
+                color: $black-color;
+                font-weight: 500;
+            }
+            button {
+                margin-top: 12px;
+                display: none;
+                border: none;
+                background-color: $black-color;
+                height: 50px;
+                width: 80%;
+                border-radius: 4px;
+                cursor: pointer;
+                span {
+                    color: $white-color;
+                    font-weight: 500;
+                    font-size: 2rem;
+                    margin: auto;
+                }
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
+            a {
+                @extend button;
+                text-decoration: none;
+            }
+            .blackText {
+                span {
+                    color: $black-color;
+                }
+                background-color: $white-color;
+                border: 1px solid lightgrey;
+                &:hover {
+                    opacity: 1;
+                    background-color: rgb(248, 248, 248);
+                }
+            }
+            .show {
+                display: flex;
+            }
+        }
+        .details {
+            span {
+                color: $black-color;
+                font-size: 1.6rem;
+                font-weight: 500;
+            }
+            p {
+                font-size: 1.5rem;
+                color: rgb(102, 102, 102);
+            }
+        }
+        .favorite {
+            margin-top: 40px;
+            p {
+                font-weight: 500;
+                color: $black-color;
+                font-size: 1.6rem;
+                margin: 0;
+            }
+            .btnWrapper {
+                display: flex;
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 40px;
+                    width: 140px;
+                    background-color: transparent;
+                    margin: 12px 0px 40px 4px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    border: 1px solid rgb(167, 167, 167);
+                    .favIcon {
+                        font-size: 2.4rem;
+                        color: red;
+                    }
+                    span {
+                        font-weight: 500;
+                        color: $black-color;
+                        font-size: 1.6rem;
+                        margin-left: 10px;
+                    }
+                    &:hover {
+                        background-color: rgb(243, 243, 243);
+                    }
+                }
+                .favLink {
+                    height: 40px;
+                    width: 170px;
+                    margin: 12px 0px 40px 4px;
+                    border-radius: 4px;
+                    border: 1px solid rgb(167, 167, 167);
+                    text-decoration: none;
+                    display: flex;
+                    span {
+                        margin: auto;
+                        font-size: 1.6rem;
+                        color: $black-color;
+                        font-weight: 500;
+                    }
+                    &:hover {
+                        background-color: rgb(243, 243, 243);
+                    }
+                }
+                .favLinkHide {
+                    display: none;
+                }
+            }
+        }
+        .socialShare {
+            p {
+                color: $black-color;
+                font-size: 1.65rem;
+                font-weight: 500;
+            }
+            .shareLink {
+                display: flex;
+                a {
+                    text-decoration: none;
+                    color: $black-color;
+                    display: flex;
+                    cursor: pointer;
+                    align-items: center;
+                    justify-content: space-around;
+                    height: 24px;
+                    width: 70px;
+                    margin-right: 10px;
+                    border-radius: 4px;
+                    background-color: rgb(230, 230, 230);
+
+                    .icon {
+                        font-size: 1.8rem;
+                        &.fbIcon {
+                            color: #0c88ef;
+                        }
+                        &.tweetIcon {
+                            color: #1d9bf0;
+                        }
+                        &.pinIcon {
+                            color: #b7081b;
+                        }
+                    }
+                    span {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}

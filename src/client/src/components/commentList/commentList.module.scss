@@ -1,0 +1,55 @@
+@use "../../scss/index" as *;
+
+.commentList {
+    margin: 30px 0 0 20px;
+    .commentItem {
+        margin-top: 30px;
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            .avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: {
+                    size: contain;
+                    repeat: no-repeat;
+                    origin: center;
+                }
+            }
+            .content {
+                padding: 6px 14px;
+                border-radius: 10px;
+                background-color: rgba(201, 201, 201, 0.4);
+                margin-left: 16px;
+                .name {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+                .text {
+                    font-size: 1.5rem;
+                }
+            }
+            .interact {
+                position: absolute;
+                bottom: -20px;
+                left: 70px;
+                span {
+                    position: relative;
+                    top: 0;
+                    font-size: 1.4rem;
+                    margin-right: 16px;
+                    color: rgb(80, 44, 44);
+                    cursor: pointer;
+                    transition: all 0.1s ease-in;
+
+                    &:hover {
+                        text-decoration: underline;
+                        top: -1px;
+                    }
+                }
+            }
+        }
+    }
+}

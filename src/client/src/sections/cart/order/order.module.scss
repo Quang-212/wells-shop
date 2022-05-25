@@ -1,0 +1,154 @@
+@use "../../../scss//index" as *;
+
+.wrapper {
+    margin-top: $nav-height;
+    padding: 70px 0 60px;
+    background-color: #fff;
+    .flex {
+        @include flex(center, center, column);
+        .title {
+            width: 100%;
+            margin-bottom: 30px;
+            p {
+                font-size: 1.6rem;
+                color: $black-color;
+                text-align: center;
+                margin: 16px 0;
+            }
+            h1 {
+                @extend p;
+                font-size: 6rem;
+                font-weight: 400;
+                margin: 40px 0;
+            }
+        }
+        .bill {
+            width: 460px;
+            .billTitle {
+                border-bottom: 1px solid #e6e5e5;
+                padding-bottom: 24px;
+                h2 {
+                    font-size: 2.8rem;
+                    letter-spacing: 3px;
+                    color: $black-color;
+                    margin-bottom: 18px;
+                    text-align: center;
+                }
+                p {
+                    margin-top: 4px;
+                    font-size: 1.7rem;
+                    text-align: center;
+                    color: #5a5a5a;
+                }
+            }
+            .billId {
+                border-bottom: 1px solid #e6e5e5;
+                padding: 20px 0;
+                @include flex(space-between, center, row);
+                .leftBlock {
+                    h3 {
+                        font-size: 1.9rem;
+                        color: $black-color;
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        font-size: 1.6rem;
+                        color: #5a5a5a;
+                    }
+                }
+                .rightlock {
+                    span {
+                        font-size: 1.7rem;
+                        color: #00598c;
+                    }
+                }
+            }
+            .paymentStatus {
+                border-bottom: 1px solid #e6e5e5;
+                padding: 20px 0;
+                h3 {
+                    font-size: 1.9rem;
+                    color: $black-color;
+                    margin-bottom: 10px;
+                }
+                span {
+                    margin-top: 4px;
+                    display: block;
+                    font-size: 1.6rem;
+                    color: #5a5a5a;
+                }
+            }
+            .yourOrder {
+                border-bottom: 1px solid #e6e5e5;
+                padding-bottom: 20px;
+                h2{
+                    margin-top: 12px;
+                    font-size: 2rem;
+                    color: $black-color;
+                }
+                .orderItem {
+                    margin-top: 20px;
+                    @include flex(flex-start, center, row);
+                    .image {
+                        width: 100px;
+                        height: 100px;
+                        background: {
+                            repeat: no-repeat;
+                            position: center;
+                            size: cover;
+                        }
+                    }
+                    .orderContent {
+                        margin-left: 20px;
+                        .name {
+                            font-size: 1.6rem;
+                            color: $footer-color;
+                            margin-bottom: 6px;
+                        }
+                        .size {
+                            font-size: 1.5rem;
+                            color: rgb(118, 118, 118);
+                            margin-bottom: 6px;
+                        }
+                        .count {
+                            font-size: 1.6rem;
+                            color: $footer-color;
+                        }
+                    }
+                }
+            }
+            .question {
+                @extend .paymentStatus;
+                border: none;
+                p {
+                    display: block;
+                    margin-top: 4px;
+                    font-size: 1.6rem;
+                    color: #5a5a5a;
+                }
+                span {
+                    display: inline-block;
+                }
+                a {
+                    margin: 4px 0 0 4px;
+                    display: inline-block;
+                    font-size: 1.6rem;
+                    color: #1f2abe;
+                }
+            }
+        }
+        .shopBtn {
+            margin-top: 25px;
+            width: 250px;
+            font-size: 2rem;
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .wrapper {
+        margin-top: calc($nav-height - 20px);
+        .title {
+            margin-bottom: 50px;
+        }
+    }
+}

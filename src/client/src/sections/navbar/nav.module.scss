@@ -1,0 +1,185 @@
+@use '../../scss/index' as *;
+
+.menuSticky {
+    position: fixed;
+    width: 100%;
+    height: 180px;
+    background-color: $white-color;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    top: -150%;
+    transition: ease-in-out 0.4s;
+    z-index: 1;
+    &.active {
+        top: calc($nav-height - 20px);
+        opacity: 1;
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+    }
+    .menuStickyItem {
+        width: 20%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        span {
+            font-size: 1.6rem;
+            position: relative;
+            color: $black-color;
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                width: 0%;
+                height: 1.4px;
+                background-color: $black-color;
+                transition: 0.2s;
+            }
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+.nav {
+    position: fixed;
+    top: 0;
+    background-color: $primary-color;
+    height: $nav-height;
+    width: 100%;
+    z-index: 5;
+    transition: all 0.6s ease-in-out;
+    &.onScroll {
+        background-color: $white-color;
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+    }
+    &.navShadow {
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .homeMenu {
+        display: flex;
+        align-items: center;
+        display: none;
+    }
+    .menuIcon {
+        font-size: 4rem;
+        cursor: pointer;
+        padding-right: 10px;
+        display: none;
+    }
+    .homeBrand {
+        display: block;
+    }
+    .hiding {
+        display: none;
+    }
+    .brandName {
+        font-family: "Vujahday Script", cursive;
+        color: $black-color;
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 3px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        align-items: center;
+        .itemLink {
+            margin-left: 50px;
+            a {
+                text-decoration: none;
+                color: $black-color;
+                font-size: 1.7rem;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 104%;
+                    width: 0;
+                    height: 1.4px;
+                    background-color: $black-color;
+                    transition: 0.2s;
+                }
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+        .cart {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+            .cartIcon {
+                color: $black-color;
+                margin-right: 6px;
+                font-size: 2.5rem;
+            }
+            a {
+                text-decoration: none;
+                color: $black-color;
+                font-size: 1.7rem;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 104%;
+                    width: 0;
+                    height: 1.4px;
+                    background-color: $black-color;
+                    transition: 0.2s;
+                }
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+/* Css transform */
+
+/* Mobile and Tablet */
+@media (max-width: 1023px) {
+    /* Chung cho cả 2 như sidebar or navbar */
+    .nav {
+        background-color: $white-color;
+        height: calc($nav-height - 20px);
+    }
+    .menuSticky {
+        display: flex;
+    }
+
+    .wrapper {
+        .homeMenu {
+            display: block;
+        }
+        .menuIcon {
+            display: block;
+        }
+        .list {
+            .itemLink {
+                display: none;
+            }
+        }
+    }
+}
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+/* Mobile and SmallTablet */
+@include mobile{
+    .wrapper{
+        margin: 0 14px;
+    }
+}
